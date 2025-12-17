@@ -3090,3 +3090,20 @@ p {
     height: 300px;
   }
 }
+
+
+
+/* Fix navbar height on mobile to prevent logo cropping */
+@media (max-width: 768px) {
+  .navbar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-height: 64px;
+  }
+
+  .navbar .logo img {
+    max-height: 40px;
+    width: auto;
+    display: block;
+  }
+}
