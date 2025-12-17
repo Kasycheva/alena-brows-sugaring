@@ -3107,3 +3107,34 @@ p {
     display: block;
   }
 }
+/* Hide studio badge on tablets + phones */
+@media (max-width: 1023px) {
+  .studio-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+
+
+
+/* Fix hero top spacing on phones/tablets (prevents H1 cropping) */
+@media (max-width: 1023px) {
+  .hero {
+    padding-top: 72px; /* место под фиксированную navbar */
+  }
+
+  /* страховка для iPhone с "чёлкой" */
+  @supports (padding-top: env(safe-area-inset-top)) {
+    .hero {
+      padding-top: calc(72px + env(safe-area-inset-top));
+    }
+  }
+
+  /* чтобы контент не "прилипал" вверх */
+  .hero-content {
+    padding-top: 12px;
+  }
+}
