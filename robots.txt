@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kasycheva.github.io/alena-brows-sugaring/sitemap.xml
