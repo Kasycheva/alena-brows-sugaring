@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Професійний шугарінг та оформлення брів у Харкові. Акуратно. Чисто. Комфортно. Alena Brows & Sugaring Studio - ваша краса в надійних руках."
+    />
+    <meta
+      name="keywords"
+      content="шугарінг Харків, брови Харків, архітектура брів, ламінування брів, депіляція Харків, Салтівка"
+    />
+      <!-- Favicon -->
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+       <!-- Open Graph (щоб красиво шарилось в месенджерах) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Alena Brows &amp; Sugaring Studio — Харків" />
+  <meta
+    property="og:description"
+    content="Професійний шугарінг та оформлення брів у Харкові. Акуратно. Чисто. Комфортно."
+  />
+  <!-- ПІСЛЯ деплою: поклади картинку og.jpg у корінь і встав тут повний URL -->
+  <!-- <meta property="og:image" content="https://ТВІЙ_ДОМЕН/og.jpg" /> -->
+  <!-- <meta property="og:url" content="https://ТВІЙ_ДОМЕН/" /> -->
+
+  <!-- Canonical (включимо після того як буде домен/або точний github.io URL) -->
+  <!-- <link rel="canonical" href="https://ТВІЙ_ДОМЕН/" /> -->
+
+    <title>
+      Alena Brows &amp; Sugaring Studio | Професійний шугарінг та брови в Харкові
+    </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </head>
+
+  <body>
+    <!-- ======================= NAVBAR ======================= -->
+    <header class="navbar">
+      <div class="container">
+        <div class="nav-content">
+          <a href="#hero" class="logo">
+            <img src="logo.jpg" alt="Alena Brows &amp; Sugaring Studio" />
+            <div class="logo-text">
+              <span class="logo-signature">A. Shuga</span>
+              <span class="logo-tagline">все буде солодко та гладко</span>
+            </div>
+          </a>
+
+          <nav class="nav-menu" id="navMenu">
+            <a href="#about">Про мене</a>
+            <a href="#benefits">Переваги</a>
+            <a href="#pricing">Прайс</a>
+            <a href="#portfolio">Роботи</a>
+            <a href="#testimonials">Відгуки</a>
+            <a href="#contact">Контакти</a>
+            <a
+              href="https://www.instagram.com/a.shuga.kh/"
+              target="_blank"
+              class="btn-primary"
+              >Записатися</a
+            >
+          </nav>
+
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="hero">
+      <div class="hero-background">
+        <!-- Золотые частицы, если генеришь их в JS -->
+        <div class="particles" id="particles"></div>
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content container">
+        <span class="studio-badge">ALENA BROWS &amp; SUGARING STUDIO</span>
+
+        <h1 class="hero-title">
+          <span class="line-1">Ідеальні брови та</span>
+          <span class="line-2">гладкість без болю</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Професійний шугарінг та оформлення брів у Харкові.<br />
+          Акуратно. Чисто. Комфортно.
+        </p>
+
+        <div class="hero-buttons">
+          <a
+            href="https://www.instagram.com/a.shuga.kh/"
+            target="_blank"
+            class="btn-primary btn-large"
+            >Записатися онлайн</a
+          >
+          <a href="#pricing" class="btn-secondary btn-large">Відкрити прайс</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse"></div>
+      </div>
+    </section>
+
+    <main>
+      <!-- ======================= ABOUT ======================= -->
+      <section class="about" id="about">
+        <div class="container">
+          <h2 class="section-title text-center">Про мене</h2>
+          <div class="divider center"></div>
+         
+          <div class="about-content">
+            <div class="about-image" data-animate="fade-right">
+              <img src="images/master-photo.webp" alt="Майстер Альона" />
+              <div class="image-decoration"></div>
+            </div>
+
+            <div data-animate="fade-left">
+              <p class="about-description">
+                Мене звати Альона. Я - сертифікований майстер з шугарингу та оформлення брів.
+              </p>
+
+              <div class="about-quote">
+                <span class="quote-mark">“</span>
+               Працюю делікатно і з любов’ю допомагаю дівчатам почуватися впевненіше. Я працюю так, як хотіла б, щоб працювали зі мною.
+              </div>
+
+              <div class="certificates">
+                <h3>Сертифікати та навчання</h3>
+                <div class="certificate-grid">
+                  <div class="certificate-item">
+                    <img src="images/certificate-2.jpg" alt="Сертифікат 1" />
+                  </div>
+                  <div class="certificate-item">
+                    <img src="images/certificate-1.jpg" alt="Сертифікат 2" />
+                  </div>
+                  <div class="certificate-item">
+                    <img src="images/certificate-3.jpg" alt="Сертифікат 3" />
+                  </div>
+                  <div class="certificate-item">
+                    <img src="images/certificate-4.jpg" alt="Сертифікат 4" />
+                  </div>
+                  <div class="certificate-item">
+                    <img src="images/certificate-5.jpg" alt="Сертифікат 5" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= BENEFITS ======================= -->
+      <section class="benefits" id="benefits">
+        <div class="container">
+          <h2 class="section-title text-center">Переваги</h2>
+          <div class="divider center"></div>
+          <p class="section-subtitle">
+            Все, щоб процедура була максимально комфортною, безпечною та
+            приємною для вас.
+          </p>
+
+          <div class="benefits-grid">
+            <div class="benefit-card" style="--delay: 0">
+              <div class="benefit-icon">
+                <span>★</span>
+              </div>
+              <h3>Безболісна та акуратна техніка</h3>
+              <p>
+                Використовую м’які методи роботи для максимального комфорту та
+                мінімуму болісних відчуттів.
+              </p>
+            </div>
+
+            <div class="benefit-card" style="--delay: 1">
+              <div class="benefit-icon">
+                <span>✔</span>
+              </div>
+              <h3>Тільки якісні матеріали</h3>
+              <p>
+                Працюю з перевіреними преміальними брендами цукрової пасти та
+                косметики для брів.
+              </p>
+            </div>
+
+            <div class="benefit-card" style="--delay: 2">
+              <div class="benefit-icon">
+                <span>☺</span>
+              </div>
+              <h3>Ідеально підібрана форма</h3>
+              <p>
+                Враховую індивідуальні особливості обличчя, щоб брови
+                підкреслювали вашу природну красу.
+              </p>
+            </div>
+
+            <div class="benefit-card" style="--delay: 3">
+              <div class="benefit-icon">
+                <span>♡</span>
+              </div>
+              <h3>Природний результат</h3>
+              <p>
+                Жодних «перефарбованих» брів — лише доглянутий та природний
+                вигляд.
+              </p>
+            </div>
+
+            <div class="benefit-card" style="--delay: 4">
+              <div class="benefit-icon">
+                <span>✚</span>
+              </div>
+              <h3>Чистота та стерильність</h3>
+              <p>
+                Одноразові матеріали, дезінфекція та стерильні інструменти —
+                безпека на першому місці.
+              </p>
+            </div>
+
+            <div class="benefit-card" style="--delay: 5">
+              <div class="benefit-icon">
+                <span>∞</span>
+              </div>
+              <h3>Багато задоволених клієнтів</h3>
+              <p>
+                Постійні клієнти, рекомендації та живі відгуки — найкраще
+                підтвердження якості.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= PRICING ======================= -->
+      <section class="pricing" id="pricing">
+        <div class="container">
+          <h2 class="section-title text-center">Прайс</h2>
+          <div class="divider center"></div>
+          <p class="section-subtitle">
+            Актуальні ціни на послуги шугарінгу та оформлення брів.
+          </p>
+
+          <div class="pricing-tables">
+            <!-- Брови -->
+            <div class="pricing-table pricing-table-with-bg bg-brows" data-animate>
+              <div class="pricing-header">
+                <h3>Брови</h3>
+                <p>Архітектура, ламінування, фарбування</p>
+              </div>
+
+              <div class="pricing-body">
+                <div class="price-item">
+                  <span class="service-name">Корекція (віск + пінцет)</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">150 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Корекція + фарбування</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">350 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Ламінування</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">300 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Ламінування + фарбування</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">500 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Фарбування вій</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">150 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Видалення вусиків(віск)</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">100 грн</span>
+                </div>
+              </div>
+
+              <a
+                href="https://www.instagram.com/a.shuga.kh/"
+                target="_blank"
+                class="btn-primary"
+                >Записатися</a
+              >
+            </div>
+
+            <!-- Шугарінг -->
+            <div class="pricing-table pricing-table-with-bg bg-sugaring" data-animate>
+              <div class="pricing-header">
+                <h3>Шугарінг</h3>
+                <p>Депіляція всіх зон</p>
+              </div>
+
+              <div class="pricing-body">
+                <div class="price-item">
+                  <span class="service-name">Ніжки повністю</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">350 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Ніжки до/вище коліна</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">200 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Руки</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">250 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Руки до/вище ліктя</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">150 грн</span>
+                </div>
+                  <div class="price-item">
+                  <span class="service-name">Бікіні класичне</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">200 грн</span>
+                </div>
+                  <div class="price-item">
+                  <span class="service-name">Бікіні глубоке</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">270-350 грн</span>
+                </div>
+                <div class="price-item">
+                  <span class="service-name">Пахви</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">100 грн</span>
+                </div>
+               
+                <div class="price-item">
+                  <span class="service-name">Вусики</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">50 грн</span>
+                </div>
+                 <div class="price-item">
+                  <span class="service-name">Сідниці</span>
+                  <span class="price-dots"></span>
+                  <span class="service-price">150 грн</span>
+                </div>
+              </div>
+
+              <a
+                href="https://www.instagram.com/a.shuga.kh/"
+                target="_blank"
+                class="btn-primary"
+                >Записатися</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= PORTFOLIO ======================= -->
+      <section class="portfolio" id="portfolio">
+        <div class="container">
+          <h2 class="section-title text-center">Роботи майстра</h2>
+          <div class="divider center"></div>
+          <p class="section-subtitle">
+            Результати, якими я пишаюся. Брови та шкіра, які виглядають
+            доглянуто та природно.
+          </p>
+
+          <div class="portfolio-tabs">
+            <button
+              class="portfolio-tab active"
+              data-target="#portfolio-brows"
+            >
+              Брови
+            </button>
+            <button 
+              class="portfolio-tab" 
+              data-target="#portfolio-sugaring"
+            >
+              Шугарінг
+            </button>
+          </div>
+
+          <!-- Брови -->
+          <div class="portfolio-carousel active" id="portfolio-brows">
+            <div class="custom-carousel-container">
+              <button class="carousel-nav-arrow carousel-nav-left">‹</button>
+              <div class="custom-carousel-track" data-carousel="brows">
+                <div class="portfolio-card" data-index="0">
+                  <div class="portfolio-wrapper">
+                    <img src="img/laminyvannya briv.jpg" alt="Ламінування брів" class="portfolio-cover" />
+                  </div>
+                  <img src="img/laminyvannya briv.jpg" alt="Ламінування брів" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Ламінування та фарбування брів</p>
+                  </div>
+                </div>
+                <div class="portfolio-card" data-index="1">
+                  <div class="portfolio-wrapper">
+                    <img src="img/arhitektyra-briv.jpg" alt="Архітектура брів" class="portfolio-cover" />
+                  </div>
+                  <img src="img/arhitektyra-briv.jpg" alt="Архітектура брів" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Корекція та архітектура</p>
+                  </div>
+                </div>
+                <div class="portfolio-card" data-index="2">
+                  <div class="portfolio-wrapper">
+                    <img src="img/Foto before and after.jpg" alt="До/після брів" class="portfolio-cover" />
+                  </div>
+                  <img src="img/Foto before and after.jpg" alt="До/після брів" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Перекриття старого татуажу</p>
+                  </div>
+                </div>
+                <div class="portfolio-card" data-index="3">
+                  <div class="portfolio-wrapper">
+                    <img src="img/Perekruttya starogo tatyajy.jpg" alt="Перекриття старого татуажу" class="portfolio-cover" />
+                  </div>
+                  <img src="img/Perekruttya starogo tatyajy.jpg" alt="Перекриття старого татуажу" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>До / Після</p>
+                  </div>
+                </div>
+                <div class="portfolio-card" data-index="4">
+                  <div class="portfolio-wrapper">
+                    <img src="img/korrecia+okrashivanie.jpg" alt="Корекція та фарбування" class="portfolio-cover" />
+                  </div>
+                  <img src="img/korrecia+okrashivanie.jpg" alt="Корекція та фарбування" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Ламінування та фарбування</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-nav-arrow carousel-nav-right">›</button>
+            </div>
+          </div>
+
+          <div class="portfolio-cta active" id="cta-brows">
+            <a
+              href="https://www.instagram.com/a.shuga.kh/"
+              target="_blank"
+              class="btn-primary"
+              >Більше робіт дивись у мене в Instagram</a
+            >
+          </div>
+
+          <!-- Шугарінг -->
+          <div class="portfolio-carousel" id="portfolio-sugaring">
+            <div class="custom-carousel-container">
+              <button class="carousel-nav-arrow carousel-nav-left">‹</button>
+              <div class="custom-carousel-track" data-carousel="sugaring">
+                <div class="portfolio-card" data-index="0">
+                  <div class="portfolio-wrapper">
+                    <img src="img/shugaring nogu.jpg" alt="Шугарінг ніг" class="portfolio-cover" />
+                  </div>
+                  <img src="img/shugaring nogu.jpg" alt="Шугарінг ніг" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Ніжки повністю</p>
+                  </div>
+                </div>
+                <div class="portfolio-card" data-index="1">
+                  <div class="portfolio-wrapper">
+                    <img src="img/shugaring bikini.jpg" alt="Шугарінг бікіні" class="portfolio-cover" />
+                  </div>
+                  <img src="img/shugaring bikini.jpg" alt="Шугарінг бікіні" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Зона бікіні</p>
+                  </div>
+                </div>
+                <div class="portfolio-card" data-index="2">
+                  <div class="portfolio-wrapper">
+                    <img src="img/shugaring pahvu.jpg" alt="Шугарінг рук" class="portfolio-cover" />
+                  </div>
+                  <img src="img/shugaring pahvu.jpg" alt="Шугарінг рук" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Шугаринг пахви</p>
+                  </div>
+                </div>
+                <div class="portfolio-card" data-index="3">
+                  <div class="portfolio-wrapper">
+                    <img src="img/shygaring ryku.png" alt="Шугарінг рук" class="portfolio-cover" />
+                  </div>
+                  <img src="img/shygaring ryku.png" alt="Шугарінг рук" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Шугаринг рук</p>
+                  </div>
+                </div>
+                <div class="portfolio-card" data-index="4">
+                  <div class="portfolio-wrapper">
+                    <img src="img/shygaring obluchya.jpg" alt="Шугарінг обличчя" class="portfolio-cover" />
+                  </div>
+                  <img src="img/shygaring obluchya.jpg" alt="Шугарінг обличчя" class="portfolio-character" />
+                  <div class="portfolio-overlay">
+                    <p>Шугаринг обличчя</p>
+                  </div>
+                </div>
+                  
+              <button class="carousel-nav-arrow carousel-nav-right">›</button>
+            </div>
+          </div>
+
+          <div class="portfolio-cta" id="cta-sugaring">
+            <a
+              href="https://www.instagram.com/a.shuga.kh/"
+              target="_blank"
+              class="btn-primary"
+              >Більше робіт дивись у мене в Instagram</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= TESTIMONIALS ======================= -->
+      <section class="testimonials" id="testimonials">
+        <div class="container">
+          <h2 class="section-title text-center">Відгуки клієнтів</h2>
+          <div class="divider center"></div>
+          <p class="section-subtitle">
+            Справжні відгуки тих, хто вже довірив мені свою красу.
+          </p>
+
+          <div class="testimonials-grid">
+            <div class="testimonial-card" style="--delay: 0">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Альона — справжній професіонал! Робить все акуратно, уважно та
+                з турботою. Брови завжди виглядають природно та доглянуто.
+                Рекомендую!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <div class="author-avatar">
+                    <img src="images/client-mariya.jpg" alt="Марія" />
+                  </div>
+                  <div>
+                    <strong>Марія</strong>
+                    <span>Постійний клієнт</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" style="--delay: 1">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Шукала майстра з шугарінгу довго, доки не потрапила до Альони.
+                Все швидко і майже безболісно. Дуже задоволена!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <div class="author-avatar">
+                    <img src="images/client-viktoriya.jpg" alt="Вікторія" />
+                  </div>
+                  <div>
+                    <strong>Вікторія</strong>
+                    <span>Клієнт більше року</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" style="--delay: 2">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Ламінування брів — це щось неймовірне! Брови пишні та доглянуті,
+                тримають форму дуже довго. Дякую, Альоно!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <div class="author-avatar">
+                    <img src="images/client-yana.jpg" alt="Яна" />
+                  </div>
+                  <div>
+                    <strong>Яна</strong>
+                    <span>Задоволений клієнт</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" style="--delay: 3">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Чистота, стерильність, професіоналізм — все на найвищому
+                рівні. Почуваюся комфортно та впевнено. Рекомендую всім
+                подругам!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <div class="author-avatar">
+                    <img src="images/client-tetyana.jpg" alt="Тетяна" />
+                  </div>
+                  <div>
+                    <strong>Тетяна</strong>
+                    <span>Постійний клієнт</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" style="--delay: 4">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Альона — справжній майстер своєї справи! Завжди уважна до
+                деталей, робота виконана бездоганно. Ходжу тільки до неї!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <div class="author-avatar">
+                    <img src="images/client-olena.jpeg" alt="Олена" />
+                  </div>
+                  <div>
+                    <strong>Олена</strong>
+                    <span>Задоволений клієнт</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" style="--delay: 5">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Дуже приємна атмосфера, все чисто та охайно. Результат
+                перевершив очікування. Дякую за професіоналізм!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <div class="author-avatar">
+                    <img src="images/client-valeriya.jpg" alt="Валерія" />
+                  </div>
+                  <div>
+                    <strong>Валерія</strong>
+                    <span>Новий клієнт</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= LOCATION ======================= -->
+      <section class="location" id="contact">
+        <div class="container">
+          <h2 class="section-title text-center">Як мене знайти</h2>
+          <div class="divider center"></div>
+
+          <div class="location-content">
+            <div class="location-info" data-animate="fade-right">
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Адреса</h3>
+                  <p>
+                    вул. Академіка Павлова, 120<br />Харків, Салтівка<br /><em
+                      >Вхід з двору, 2 поверх</em
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6V12L16 14" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Години роботи</h3>
+                  <p>
+                    Понеділок – Неділя: 9:00 – 18:00<br /><em
+                      >За попереднім записом</em
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.5953 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04207 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5864 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Телефони</h3>
+                  <p>
+                    <a href="tel:+380937426354">+38 (093) 742-63-54</a><br />
+                    <a href="tel:+380959152872">+38 (095) 915-28-72</a>
+                  </p>
+                </div>
+              </div>
+
+              <a href="https://www.google.com/maps/dir/?api=1&destination=50.007186529337595, 36.317132664339184"
+               target="_blank"
+               rel="noopener"
+               class="btn-primary btn-large"
+              >
+              Побудувати маршрут
+             </a>
+            </div>
+
+            <div class="location-map" data-animate="fade-left">
+          <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1282.112673357282!2d36.3155930763995!3d50.007131366651315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127092f019afa4f%3A0x60f831dc8c21e01a!2sAlena%20Brows%20%26%20Sugaring!5e0!3m2!1suk!2sno!4v1765961861423!5m2!1suk!2sno"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+         </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <img
+              src="logo.jpg"
+              alt="Alena Brows &amp; Sugaring Studio"
+              class="footer-logo"
+            />
+            <p>Професійний шугарінг та оформлення брів у Харкові</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Контакти</h4>
+            <ul>
+              <li><a href="tel:+380937426354">+38 (093) 742-63-54</a></li>
+              <li><a href="tel:+380959152872">+38 (095) 915-28-72</a></li>
+              <li>вул. Академіка Павлова, 120</li>
+              <li>Харків, Салтівка</li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Години роботи</h4>
+            <ul>
+              <li>Понеділок – Неділя</li>
+              <li>9:00 – 18:00</li>
+              <li><em>За попереднім записом</em></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Соціальні мережі</h4>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/a.shuga.kh/"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/380937426354"
+                target="_blank"
+                aria-label="WhatsApp"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://t.me/+380937426354"
+                target="_blank"
+                aria-label="Telegram"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <a
+              href="https://www.instagram.com/a.shuga.kh/"
+              target="_blank"
+              class="btn-primary"
+              >Записатися</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Alena Brows &amp; Sugaring Studio. Всі права захищені.
+            Створено з <span class="heart">❤</span> в Харкові.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ======================= FIRST VISIT POPUP ======================= -->
+    <div class="popup" id="welcomePopup">
+      <div class="popup-content">
+        <button class="popup-close" id="popupClose">&times;</button>
+        <div class="popup-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="8" width="18" height="4" rx="1" />
+            <path d="M12 8v13" />
+            <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+            <path d="M7.5 8a2.5 2.5 0 0 1 5 0v2a2.5 2.5 0 0 1-5 0z" />
+            <path d="M16.5 8a2.5 2.5 0 0 1 5 0v2a2.5 2.5 0 0 1-5 0z" />
+          </svg>
+        </div>
+        <h3>Вітаємо!</h3>
+        <p>Знижка <strong>-20%</strong> на перше знайомство</p>
+        <p class="popup-small">
+          Запишіться зараз та отримайте спеціальну пропозицію для нових клієнтів
+        </p>
+        <a
+          href="https://www.instagram.com/a.shuga.kh/"
+          target="_blank"
+          class="btn-primary btn-large popup-cta"
+          >Записатися зі знижкою</a
+        >
+      </div>
+    </div>
+
+    <!-- Modal for Portfolio Images -->
+    <div id="portfolioModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Portfolio Image" />
+      </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- ======================= SCRIPTS ======================= -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
