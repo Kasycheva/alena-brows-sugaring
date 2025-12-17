@@ -389,8 +389,68 @@ function initPortfolioSwipers() {
 }
 
 // ===================================
-// Modal for Portfolio Images
+// Initialize Swiper for Portfolio on Mobile
 // ===================================
+function initPortfolioSwiper() {
+  if (window.innerWidth <= 1023) {
+    const swiperBrows = document.getElementById('swiper-brows');
+    const swiperSugaring = document.getElementById('swiper-sugaring');
+
+    if (swiperBrows && !swiperBrows.swiper) {
+      new Swiper(swiperBrows, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoHeight: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: swiperBrows.querySelector('.swiper-button-next'),
+          prevEl: swiperBrows.querySelector('.swiper-button-prev'),
+        },
+        pagination: {
+          el: swiperBrows.querySelector('.swiper-pagination'),
+          clickable: true,
+        },
+      });
+    }
+
+    if (swiperSugaring && !swiperSugaring.swiper) {
+      new Swiper(swiperSugaring, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoHeight: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: swiperSugaring.querySelector('.swiper-button-next'),
+          prevEl: swiperSugaring.querySelector('.swiper-button-prev'),
+        },
+        pagination: {
+          el: swiperSugaring.querySelector('.swiper-pagination'),
+          clickable: true,
+        },
+      });
+    }
+  }
+}
+
+// Call on load and resize
+window.addEventListener('load', initPortfolioSwiper);
+window.addEventListener('resize', () => {
+  // Destroy swiper on desktop
+  document.querySelectorAll('.portfolio-swiper').forEach((swiperEl) => {
+    if (swiperEl.swiper && window.innerWidth > 767) {
+      swiperEl.swiper.destroy(true, true);
+    }
+  });
+  initPortfolioSwiper();
+});
 function initPortfolioModal() {
   const modal = document.getElementById('portfolioModal');
   const modalImg = document.getElementById('modalImage');
@@ -404,9 +464,11 @@ function initPortfolioModal() {
   // Open modal on image click (using event delegation for dynamic content)
   document.addEventListener('click', function(e) {
     const portfolioCard = e.target.closest('.portfolio-card');
-    if (portfolioCard) {
+    const portfolioItem = e.target.closest('.portfolio-item');
+    const target = portfolioCard || portfolioItem;
+    if (target) {
       // Get the cover image (main image)
-      const img = portfolioCard.querySelector('.portfolio-cover') || portfolioCard.querySelector('img');
+      const img = target.querySelector('.portfolio-cover') || target.querySelector('img');
       if (img && img.src) {
         modalImg.src = img.src;
         modalImg.alt = img.alt || 'Portfolio Image';
@@ -587,6 +649,20 @@ document.querySelectorAll(".certificate-item img").forEach((img) => {
             cursor: pointer;
         `;
 
+    // Create close button
+    const closeBtn = document.createElement("span");
+    closeBtn.innerHTML = "&times;";
+    closeBtn.style.cssText = `
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+        `;
+
     // Create image
     const modalImg = document.createElement("img");
     modalImg.src = this.src;
@@ -597,12 +673,16 @@ document.querySelectorAll(".certificate-item img").forEach((img) => {
             box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
         `;
 
+    modal.appendChild(closeBtn);
     modal.appendChild(modalImg);
     document.body.appendChild(modal);
 
     // Close on click
-    modal.addEventListener("click", () => {
-      modal.remove();
+    const closeModal = () => modal.remove();
+    modal.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeModal();
     });
   });
 });
@@ -623,8 +703,8 @@ function setupCertificateFan() {
   grid.addEventListener('mouseleave', () => grid.classList.remove('spread'));
 
   // Touch / click: toggle spread for accessibility on touch devices
-  grid.addEventListener('click', (e) => {
-    // If user clicked a certificate-item, toggle spread
+  grid.addEventListener('pointerdown', (e) => {
+    // If user pressed a certificate-item, toggle spread
     if (e.target.closest('.certificate-item')) {
       grid.classList.toggle('spread');
     }

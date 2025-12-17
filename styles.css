@@ -321,6 +321,18 @@ p {
   transition: var(--transition-base);
 }
 
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
 /* ===================================
    Hero Section - Chaotic Golden Particles
    =================================== */
@@ -737,9 +749,21 @@ p {
   color: var(--color-text);
 }
 
+@media (max-width: 767px) {
+  .about-description {
+    text-align: center;
+  }
+}
+
 .certificates h3 {
   margin-bottom: var(--spacing-md);
   color: var(--color-primary);
+}
+
+@media (max-width: 1023px) {
+  .certificates h3 {
+    text-align: center;
+  }
 }
 
 /* Fan Effect for Certificates */
@@ -876,12 +900,12 @@ p {
   .certificate-item:nth-child(4) { transform: translate(-50%, -50%) rotate(1.5deg) scale(0.97); z-index:2; }
   .certificate-item:nth-child(5) { transform: translate(-50%, -50%) rotate(3deg) scale(0.95); z-index:1; }
 
-  /* Spread state for small screens (smaller translations) */
-  .certificate-grid.spread .certificate-item:nth-child(1) { transform: translate(-120%, -48%) rotate(-12deg) scale(0.9); z-index:1; }
-  .certificate-grid.spread .certificate-item:nth-child(2) { transform: translate(-75%, -52%) rotate(-6deg) scale(0.95); z-index:2; }
-  .certificate-grid.spread .certificate-item:nth-child(3) { transform: translate(-50%, -58%) rotate(0deg) scale(1.02); z-index:3; }
-  .certificate-grid.spread .certificate-item:nth-child(4) { transform: translate(-10%, -52%) rotate(6deg) scale(0.95); z-index:2; }
-  .certificate-grid.spread .certificate-item:nth-child(5) { transform: translate(40%, -45%) rotate(12deg) scale(0.9); z-index:1; }
+  /* Spread state for small screens (tighter) */
+  .certificate-grid.spread .certificate-item:nth-child(1) { transform: translate(-100%, -40%) rotate(-10deg) scale(0.9); z-index:1; }
+  .certificate-grid.spread .certificate-item:nth-child(2) { transform: translate(-60%, -45%) rotate(-5deg) scale(0.95); z-index:2; }
+  .certificate-grid.spread .certificate-item:nth-child(3) { transform: translate(-50%, -50%) rotate(0deg) scale(1.02); z-index:3; }
+  .certificate-grid.spread .certificate-item:nth-child(4) { transform: translate(0%, -45%) rotate(5deg) scale(0.95); z-index:2; }
+  .certificate-grid.spread .certificate-item:nth-child(5) { transform: translate(30%, -40%) rotate(10deg) scale(0.9); z-index:1; }
 
   /* Ensure hover fallback doesn't force removal */
   .certificate-grid:hover .certificate-item { /* keep hover behavior */ }
@@ -972,6 +996,17 @@ p {
 
 .benefit-card:hover .benefit-icon {
   transform: rotateY(360deg);
+}
+
+@media (max-width: 1023px) {
+  .benefit-icon {
+    animation: spin 3s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
 }
 
 .benefit-card h3 {
@@ -1214,6 +1249,12 @@ p {
   z-index: 100;
 }
 
+@media (max-width: 1023px) {
+  .portfolio-cta {
+    margin-top: 50px !important;
+  }
+}
+
 .portfolio-cta:not(.active) {
   display: none;
 }
@@ -1411,11 +1452,20 @@ p {
   width: 100%;
   height: 100%;
   min-height: 400px;
-  object-fit: cover;
+  object-fit: scale-down;
   object-position: center;
   filter: brightness(1.1);
   transition: var(--transition-base);
   display: block;
+}
+
+@media (max-width: 1023px) {
+  .portfolio-cover {
+    object-fit: scale-down;
+    height: auto;
+    max-height: none;
+    min-height: auto;
+  }
 }
 
 .portfolio-character {
@@ -1430,11 +1480,33 @@ p {
   border-radius: var(--radius-lg);
   filter: brightness(1.2);
   transform: translate3d(0%, 0%, 0);
+  display: none !important;
 }
 
 .portfolio-card:hover .portfolio-character,
 .portfolio-item:hover .portfolio-character {
   /* Removed 3D hover effects */
+}
+
+/* Make portfolio-character visible on mobile */
+@media (max-width: 767px) {
+  .portfolio-character {
+    display: block !important;
+    opacity: 1;
+  }
+}
+
+.portfolio-swiper {
+  display: none !important;
+}
+
+@media (max-width: 1023px) {
+  .custom-carousel-container {
+    display: none;
+  }
+  .portfolio-swiper {
+    display: block !important;
+  }
 }
 
 .portfolio-overlay {
@@ -1630,16 +1702,20 @@ p {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .portfolio-item {
-    height: 300px;
+    height: auto;
   }
+}
 
   .portfolio-swiper .swiper-button-next,
   .portfolio-swiper .swiper-button-prev {
     width: 40px;
     height: 40px;
     margin-top: -20px;
+    top: auto;
+    bottom: 10px;
+    transform: none;
   }
 
   .portfolio-swiper .swiper-button-next::after,
@@ -1654,6 +1730,16 @@ p {
 .testimonials {
   padding: var(--spacing-xl) 0;
   background: var(--bg-light);
+}
+
+.testimonials .section-subtitle {
+  margin-top: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .testimonials {
+    padding: var(--spacing-md) 0 var(--spacing-xl);
+  }
 }
 
 .testimonials-grid {
@@ -1695,11 +1781,23 @@ p {
   margin-bottom: var(--spacing-sm);
 }
 
+@media (max-width: 1023px) {
+  .testimonial-stars {
+    text-align: center;
+  }
+}
+
 .testimonial-text {
   font-style: italic;
   color: var(--color-text);
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
+}
+
+@media (max-width: 1023px) {
+  .testimonial-text {
+    text-align: center;
+  }
 }
 
 .testimonial-author {
@@ -1807,6 +1905,22 @@ p {
   height: 30px;
 }
 
+@media (max-width: 1023px) {
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .info-icon {
+    animation: spin 4s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
 .info-item h3 {
   margin-bottom: var(--spacing-xs);
   font-size: 1.25rem;
@@ -1835,6 +1949,12 @@ p {
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   height: 500px;
+}
+
+@media (max-width: 1023px) {
+  .location-map {
+    border: 2px solid rgba(201, 169, 97, 0.5);
+  }
 }
 
 .location-map iframe {
@@ -1868,6 +1988,12 @@ p {
   font-weight: 600;
 }
 
+@media (max-width: 1023px) {
+  .footer-section {
+    text-align: center;
+  }
+}
+
 .footer-section ul {
   display: flex;
   flex-direction: column;
@@ -1889,6 +2015,12 @@ p {
   margin-bottom: var(--spacing-sm);
 }
 
+@media (max-width: 1023px) {
+  .footer-logo {
+    margin: 0 auto var(--spacing-sm);
+  }
+}
+
 .footer-section p {
   font-size: 0.95rem;
   opacity: 0.9;
@@ -1898,6 +2030,12 @@ p {
   display: flex;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-md);
+}
+
+@media (max-width: 1023px) {
+  .social-links {
+    justify-content: center;
+  }
 }
 
 .social-links a {
