@@ -541,17 +541,33 @@ function showWelcomePopup() {
     return;
   }
 
-  // Check if user has visited before
-  const hasVisited = localStorage.getItem("hasVisited");
+  // Check if user has visited before (expires after 24 hours)
+  const visitTimestamp = localStorage.getItem("hasVisited");
+  const currentTime = Date.now();
+  const twentyFourHoursInMs = 24 * 60 * 60 * 1000;
 
-  if (!hasVisited) {
-    // Show popup after 2 seconds
+  let shouldShowPopup = false;
+
+  if (!visitTimestamp) {
+    // First visit - show popup
+    shouldShowPopup = true;
+  } else {
+    const lastVisitTime = parseInt(visitTimestamp);
+    // Show again if more than 24 hours have passed
+    if (currentTime - lastVisitTime > twentyFourHoursInMs) {
+      shouldShowPopup = true;
+    }
+  }
+
+  if (shouldShowPopup) {
+    // Show popup after 1.5 seconds with animation
     setTimeout(() => {
       welcomePopup.classList.add("active");
-    }, 2000);
+      createConfetti(); // Trigger confetti on popup show
+    }, 1500);
 
-    // Mark as visited
-    localStorage.setItem("hasVisited", "true");
+    // Mark as visited with current timestamp
+    localStorage.setItem("hasVisited", currentTime.toString());
   }
 
   // Close popup on click

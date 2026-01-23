@@ -543,6 +543,7 @@ p {
   color: var(--color-white);
   max-width: 900px;
   padding: var(--spacing-md);
+  padding-top: 4rem;
 }
 
 /* Studio Name Badge */
@@ -1030,9 +1031,63 @@ p {
 
 .pricing-tables {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
   margin-top: var(--spacing-lg);
+}
+
+/* Специально для третьего элемента - растягивается вдоль ширины двух блоков */
+.pricing-tables .pricing-table:nth-child(3) {
+  grid-column: 1 / -1;
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.pricing-tables .pricing-table:nth-child(3) .pricing-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.pricing-tables .pricing-table:nth-child(3) .price-item {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .pricing-tables {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-tables .pricing-table:nth-child(3) .pricing-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-tables {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .pricing-tables .pricing-table:nth-child(3) {
+    padding: var(--spacing-md);
+  }
+
+  .pricing-tables .pricing-table:nth-child(3) .pricing-header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .pricing-table {
+    padding: var(--spacing-md);
+  }
+
+  .pricing-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .service-price {
+    font-size: 1rem;
+  }
 }
 
 .pricing-table {
@@ -1042,6 +1097,7 @@ p {
   box-shadow: var(--shadow-lg);
   transition: var(--transition-base);
   border: 2px solid transparent;
+  transform-origin: center;
 }
 
 .pricing-table:hover {
@@ -1056,33 +1112,58 @@ p {
 
 /* Creative Animation: Crash from sides */
 .pricing-table.bg-brows.animated {
-  animation: crashSlideLeft 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: crashSlideLeft 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .pricing-table.bg-sugaring.animated {
-  animation: crashSlideRight 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  animation-delay: 0.2s; /* Slight delay for second card */
+  animation: crashSlideRight 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 0.15s;
+}
+
+.pricing-table.bg-packages.animated {
+  animation: crashSlideFull 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 0.3s;
 }
 
 @keyframes crashSlideLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px) rotate(-10deg);
+    transform: translateX(-120px) rotate(-8deg) scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
-    transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg) scale(1);
   }
 }
 
 @keyframes crashSlideRight {
   0% {
     opacity: 0;
-    transform: translateX(100px) rotate(10deg);
+    transform: translateX(120px) rotate(8deg) scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
-    transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes crashSlideFull {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.8) scaleY(0.95) translateY(60px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1) translateY(0);
   }
 }
 
@@ -1157,6 +1238,10 @@ p {
 
 .bg-brows {
   background-image: url('brovi-bg.jpeg');
+}
+
+.bg-packages {
+  background-image: url('fon3.png');
 }
 
 .pricing-table-with-bg::before {
@@ -2115,7 +2200,9 @@ p {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition-base);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  padding: var(--spacing-md);
+  overflow-y: auto;
 }
 
 .popup.active {
@@ -2128,16 +2215,31 @@ p {
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
   max-width: 500px;
-  width: 90%;
+  width: 100%;
   text-align: center;
   position: relative;
   transform: scale(0.8);
-  transition: var(--transition-base);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: var(--shadow-xl);
+  animation: popupBounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .popup.active .popup-content {
   transform: scale(1);
+}
+
+@keyframes popupBounce {
+  0% {
+    transform: scale(0.6) translateY(-50px);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .popup-close {
@@ -2198,6 +2300,52 @@ p {
 .popup-small {
   font-size: 0.875rem;
   color: var(--color-text-light);
+}
+
+/* Mobile styles for popup */
+@media (max-width: 768px) {
+  .popup {
+    padding: var(--spacing-md);
+  }
+
+  .popup-content {
+    padding: var(--spacing-md);
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .popup-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .popup-content strong {
+    font-size: 1.25rem;
+  }
+
+  .popup-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .popup-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .popup-close {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+
+  .popup-content p {
+    font-size: 0.95rem;
+  }
+
+  .popup-small {
+    font-size: 0.8rem;
+  }
 }
 
 /* ===================================
@@ -3107,8 +3255,8 @@ p {
     display: block;
   }
 }
-/* Hide studio badge on tablets + phones */
-@media (max-width: 1023px) {
+/* Hide studio badge on mobile phones */
+@media (max-width: 768px) {
   .studio-badge {
     display: none !important;
     visibility: hidden !important;
