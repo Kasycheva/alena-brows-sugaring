@@ -2039,6 +2039,13 @@ p {
 @media (max-width: 1023px) {
   .location-map {
     border: 2px solid rgba(201, 169, 97, 0.5);
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .location-map {
+    height: 300px;
   }
 }
 
