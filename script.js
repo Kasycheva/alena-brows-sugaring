@@ -600,7 +600,11 @@ function showWelcomePopup() {
   });
 }
 
-showWelcomePopup();
+// Initialize popup with 4 second delay to comply with Google Core Web Vitals
+// and not obstruct user interaction on page load
+setTimeout(() => {
+  showWelcomePopup();
+}, 4000);
 
 // ===================================
 // Smooth Reveal on Scroll
